@@ -5,7 +5,7 @@
 **Subject:** DevOps Midterm  
 **Stack:** Java 17, Spring Boot 3.5, Gradle, Spring Data JPA, PostgreSQL, Docker Compose, Jenkins
 
-Project focus: An individual Spring Boot CRUD API for student records with an automated build and containerized database.
+Project focus: Clear setup instructions and reproducible evidence for an individual Spring Boot CRUD API.
 
 ## Architecture
 
