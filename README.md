@@ -66,6 +66,11 @@ ps aux | grep '[j]ava' || true
 
 The project is designed for the repository `mambetali-aruzhan-student-api`, branches `feature/mambetali-aruzhan-crud` and `feature/mambetali-aruzhan-documentation`, and tag `v1.0-mambetali-aruzhan`.
 
+Before making new commits, confirm that the repository-local `git config user.email`
+matches a verified email in your GitHub account. The supplied local history uses
+the privacy-friendly `AruzhanMambetali@users.noreply.github.com` pattern, which
+should be checked against your actual GitHub email setting.
+
 Check local history:
 
 ```bash
