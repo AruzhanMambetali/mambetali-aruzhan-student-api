@@ -1,0 +1,45 @@
+name: mambetali-aruzhan-student-api
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-student_db}
+      POSTGRES_USER: ${POSTGRES_USER:-student_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - student_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 10s
+    restart: unless-stopped
+
+  app:
+    image: mambetali-aruzhan-student-api:v1.0-mambetali-aruzhan
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT:-8080}:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-student_db}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-student_user}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - student_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+networks:
+  student_network:
+    driver: bridge

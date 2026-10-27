@@ -1,0 +1,15 @@
+.gradle/
+build/
+out/
+.idea/
+*.iml
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+!logs/.gitkeep
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+reports/

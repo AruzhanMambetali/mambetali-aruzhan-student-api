@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: mambetali-aruzhan-student-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/student_db}
+    username: ${SPRING_DATASOURCE_USERNAME:student_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: update # Educational demo only; use migrations in production.
+    open-in-view: false
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
