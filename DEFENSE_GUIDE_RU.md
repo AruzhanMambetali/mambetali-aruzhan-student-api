@@ -2,7 +2,7 @@
 
 ## Что я разработала — текст для выступления на английском
 
-> Hello. My name is Mambetali Aruzhan Imanaliyevna. This is my individual DevOps midterm project. I developed a Student REST API using Java, Spring Boot, Gradle, and PostgreSQL. The project contains CRUD operations: create, read, update, and delete. I implemented seven integration tests and created a multi-stage Dockerfile. Docker Compose starts the application and database in a dedicated network and uses a named volume to preserve PostgreSQL data. Git tracks my changes and branches, while Jenkins automates checkout, compilation, tests, Docker image build, and verification.
+> Hello. My name is Mambetali Aruzhan Imanaliyevna. This is my individual DevOps midterm project. I developed a Student REST API using Java, Spring Boot, Gradle, and PostgreSQL. The project contains CRUD operations: create, read, update, and delete. I implemented eight integration tests and created a multi-stage Dockerfile. Docker Compose starts the application and database in a dedicated network and uses a named volume to preserve PostgreSQL data. Git tracks my changes and branches, while Jenkins automates checkout, compilation, tests, Docker image build, and verification.
 
 > In the Linux part, I created a Bash system monitoring script. It writes my name, system information, CPU, RAM and disk statistics to my personal log file. I configured file permissions and created a README backup. Finally, I demonstrated Git merges and a merge conflict resolution, API operations, PostgreSQL persistence, and the Jenkins pipeline.
 
