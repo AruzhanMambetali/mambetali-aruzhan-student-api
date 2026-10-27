@@ -37,6 +37,10 @@ Sample record:
 }
 ```
 
+The personalized CRUD feature normalizes student email addresses to lowercase
+and removes surrounding spaces during both POST and PUT operations. An
+integration test checks uppercase input and the returned normalized value.
+
 ## Part 1 — Linux administration
 
 Run these commands in the project root on **Ubuntu/Linux or WSL**:
