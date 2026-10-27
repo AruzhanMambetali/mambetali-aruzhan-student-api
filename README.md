@@ -5,7 +5,7 @@
 **Subject:** DevOps Midterm  
 **Stack:** Java 17, Spring Boot 3.5, Gradle, Spring Data JPA, PostgreSQL, Docker Compose, Jenkins
 
-Project focus: Automated testing, PostgreSQL persistence, and CI for a containerized Spring Boot CRUD API.
+Project focus: An individual Spring Boot CRUD API with PostgreSQL persistence, automated tests, CI, and reproducible documentation.
 
 ## Architecture
 
