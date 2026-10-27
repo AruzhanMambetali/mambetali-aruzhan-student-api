@@ -53,6 +53,18 @@ class StudentApiIntegrationTest {
     }
 
     @Test
+    void createNormalizesEmail() throws Exception {
+        var data = """
+                {"fullName":"Mambetali Aruzhan Imanaliyevna",
+                 "email":"ARUZHAN@EXAMPLE.COM", "program":"Software Engineering", "year":4}
+                """;
+        mvc.perform(post("/api/students")
+                        .contentType(MediaType.APPLICATION_JSON).content(data))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.email").value("aruzhan@example.com"));
+    }
+
+    @Test
     void listReturnsStudents() throws Exception {
         createStudent();
         mvc.perform(get("/api/students"))
@@ -65,7 +77,7 @@ class StudentApiIntegrationTest {
         long id = createStudent();
         var updated = """
                 {"fullName":"Mambetali Aruzhan Imanaliyevna",
-                 "email":"updated@example.com",
+                 "email":"UPDATED@EXAMPLE.COM",
                  "program":"Backend Development", "year":4}
                 """;
         mvc.perform(put("/api/students/{id}", id)
