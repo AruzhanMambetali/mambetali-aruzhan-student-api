@@ -49,7 +49,7 @@ class StudentApiIntegrationTest {
         long id = createStudent();
         mvc.perform(get("/api/students/{id}", id))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.email").value("wrong@example.com"));
+                .andExpect(jsonPath("$.email").value("aruzhan@example.com"));
     }
 
     @Test
