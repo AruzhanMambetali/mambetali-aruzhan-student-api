@@ -23,7 +23,7 @@ public class Student {
     @Column(nullable = false, length = 120)
     private String program;
 
-    @Column(nullable = false)
+    @Column(name = "study_year", nullable = false)
     private int year;
 
     protected Student() {
